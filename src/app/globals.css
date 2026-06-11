@@ -4,12 +4,13 @@
   --background: #ffffff;
   --foreground: #171717;
 
-  --spark-grey-20:#576071;
+  --spark-grey-20:#4B4038;
   --spark-blue-20:#629FAD;
   --spark-lightblue-100:#00F7FF;
   --spark-violet-200:#500073;
   --spark-gold-100:#DDA853;
   --spark-lightgreen-100:#AEEA94;
+  --spark-black-80:#091413;
   
 }
 
@@ -25,6 +26,7 @@
   --color-spark-violet-200:var(--spark-violet-200);
   --color-spark-lightblue-100:var(--spark-lightblue-100);
   --color-spark-lightgreen-100:var(--spark-lightgreen-100);
+  --color-spark-black-80:var(--spark-black-80);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -37,6 +39,7 @@
     --color-spark-violet-200:var(--spark-violet-200);
     --color-spark-lightblue-100:var(--spark-lightblue-100);
     --color-spark-lightgreen-100:var(--spark-lightgreen-100);
+    --color-spark-black-80:var(--spark-black-80);
   }
 }
 
@@ -44,4 +47,15 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+
+input[type="number"] {
+  -webkit-appearance: textfield;
+     -moz-appearance: textfield;
+          appearance: textfield;
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none;
 }
