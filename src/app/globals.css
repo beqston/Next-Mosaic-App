@@ -3,19 +3,40 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  --spark-grey-20:#576071;
+  --spark-blue-20:#629FAD;
+  --spark-lightblue-100:#00F7FF;
+  --spark-violet-200:#500073;
+  --spark-gold-100:#DDA853;
+  --spark-lightgreen-100:#AEEA94;
+  
 }
+
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --color-spark-grey-20:var(--spark-grey-20);
+  --color-spark-blue-20:var(--spark-blue-20);
+  --color-spark-gold-100:var(--spark-gold-100);
+  --color-spark-violet-200:var(--spark-violet-200);
+  --color-spark-lightblue-100:var(--spark-lightblue-100);
+  --color-spark-lightgreen-100:var(--spark-lightgreen-100);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --color-spark-grey-20:var(--spark-grey-20);
+    --color-spark-blue-20:var(--spark-blue-20);
+    --color-spark-gold-100:var(--spark-gold-100);
+    --color-spark-violet-200:var(--spark-violet-200);
+    --color-spark-lightblue-100:var(--spark-lightblue-100);
+    --color-spark-lightgreen-100:var(--spark-lightgreen-100);
   }
 }
 
