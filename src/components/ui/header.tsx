@@ -15,7 +15,6 @@ export default function Header(){
                 <span className="absolute z-10 text-xl text-white -top-1 -translate-x-2">2</span>
                 <Image width={32} height={32} src={"/images/cart.png"} alt="cart" />
            </div>
-
         </header>
     )
 }

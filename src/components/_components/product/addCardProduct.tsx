@@ -19,6 +19,7 @@ export default function AddCardProduct({product}:{product:Product}){
 
     return(
         <div className="flex gap-2">
+            
             <div className="flex">
                 <button onClick={decrease} className="text-4xl cursor-pointer text-spark-violet-200">-</button>
                 <input className="w-8 text-center bg-spark-grey-20 text-spark-lightblue-100" type="number" value={count} readOnly />

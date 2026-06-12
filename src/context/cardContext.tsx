@@ -31,7 +31,6 @@ export function CardContextProvider({children}:{children:React.ReactNode}){
                     : item
                 )
             }
-            console.log(prev)
             return [...prev, { product, quantity }];
         })
     }
