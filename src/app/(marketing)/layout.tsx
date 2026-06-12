@@ -1,15 +1,15 @@
 import Footer from "@/components/ui/footer";
 import Header from "@/components/ui/header";
-import { CardContextProvider } from "@/context/cardContext";
+import { CartContextProvider } from "@/context/cartContext";
 
 export default function MarketingLayout({children}:Readonly<{children:React.ReactNode}>){
     return(
         <>
-            <CardContextProvider>
+            <CartContextProvider>
                 <Header />
                     {children}
                 <Footer />
-            </CardContextProvider>
+            </CartContextProvider>
         </>
     )
 }

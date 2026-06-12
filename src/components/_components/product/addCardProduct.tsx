@@ -1,12 +1,12 @@
 "use client"
 
-import { useCardContext } from "@/context/cardContext"
+import { useCartContext } from "@/context/cartContext"
 import { Product } from "@/types/product";
 import { useState } from "react";
 
 export default function AddCardProduct({product}:{product:Product}){
     const [count, setCount] = useState<number>(1)
-    const {addToCart} = useCardContext();
+    const {addToCart} = useCartContext();
     
     function decrease(){
         setCount(prev=> prev==1?1:prev-1)
@@ -19,7 +19,6 @@ export default function AddCardProduct({product}:{product:Product}){
 
     return(
         <div className="flex gap-2">
-            
             <div className="flex">
                 <button onClick={decrease} className="text-4xl cursor-pointer text-spark-violet-200">-</button>
                 <input className="w-8 text-center bg-spark-grey-20 text-spark-lightblue-100" type="number" value={count} readOnly />

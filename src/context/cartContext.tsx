@@ -13,13 +13,17 @@ type CardContextType={
     cartArray:CartItem[],
     setCartArray:Dispatch<SetStateAction<CartItem[]>>,
     addToCart:(product:Product, quantity:number)=>void,
+    isCartShow:boolean,
+    setIsCartShow:Dispatch<SetStateAction<boolean>>,
+    showCartList:()=>void
 }
 
 
-const CardContext = createContext<CardContextType | null>(null);
+const CartContext = createContext<CardContextType | null>(null);
 
-export function CardContextProvider({children}:{children:React.ReactNode}){
+export function CartContextProvider({children}:{children:React.ReactNode}){
     const [cartArray, setCartArray] = useState<CartItem[]>([]);
+    const[isCartShow, setIsCartShow] = useState(false);
 
     function addToCart(product:Product, quantity:number){
         setCartArray(prev=>{
@@ -34,18 +38,20 @@ export function CardContextProvider({children}:{children:React.ReactNode}){
             return [...prev, { product, quantity }];
         })
     }
-    console.log(cartArray)
 
+    function showCartList(){
+        setIsCartShow(prev=>!prev)
+    }
 
     return(
-        <CardContext.Provider value={{cartArray, setCartArray, addToCart}}>
+        <CartContext.Provider value={{cartArray, setCartArray, addToCart, isCartShow, setIsCartShow, showCartList}}>
             {children}
-        </CardContext.Provider>
+        </CartContext.Provider>
     )
 }
 
-export function useCardContext(){
-    const context = useContext(CardContext)
+export function useCartContext(){
+    const context = useContext(CartContext)
     if(!context){
         throw new Error("useCardContext must be used within a CardContextProvider");
     }
