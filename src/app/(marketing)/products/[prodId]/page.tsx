@@ -34,7 +34,7 @@ export default async function ProductPage({params}:Props){
                 <p>{product.description}</p>
                 <div className="w-full flex items-center bg-red justify-between">
                     <span>{product.price}$</span>
-                    <AddCardProduct />
+                    <AddCardProduct product={product} />
                 </div>
             </div>
         </div>

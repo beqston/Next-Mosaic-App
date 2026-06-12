@@ -1,24 +1,30 @@
 "use client"
 
 import { useCardContext } from "@/context/cardContext"
+import { Product } from "@/types/product";
+import { useState } from "react";
 
-export default function AddCardProduct(){
-    const {productCount, setProductCount} = useCardContext();
+export default function AddCardProduct({product}:{product:Product}){
+    const [count, setCount] = useState<number>(1)
+    const {addToCart} = useCardContext();
+    
     function decrease(){
-        setProductCount(prev=> prev==1?1:prev-1)
+        setCount(prev=> prev==1?1:prev-1)
+        console.log("cou", count)
     }
 
     function increase(){
-        setProductCount(prev=> prev==10?10:prev+1)
+        setCount(prev=> prev==10?10:prev+1)
     }
+
     return(
         <div className="flex gap-2">
             <div className="flex">
                 <button onClick={decrease} className="text-4xl cursor-pointer text-spark-violet-200">-</button>
-                <input className="w-8 text-center bg-spark-grey-20 text-spark-lightblue-100" type="number" value={productCount} />
+                <input className="w-8 text-center bg-spark-grey-20 text-spark-lightblue-100" type="number" value={count} readOnly />
                 <button onClick={increase} className="text-4xl cursor-pointer text-spark-violet-200">+</button>
             </div>
-            <button className="p-4 bg-gray-200 cursor-pointer  rounded-xl hover:bg-sky-200 duration-1000 ">Add Card</button>
+            <button onClick={()=>addToCart(product, count)} className="p-4 bg-gray-200 cursor-pointer  rounded-xl hover:bg-sky-200 duration-1000 ">Add Cart</button>
         </div>
     )
 }
